@@ -34,6 +34,7 @@ def test_functional():
                 numberString = number
 
             assert (value == newCard.get_value())
+            assert (number == newCard.get_number())
             assert (suit == newCard.get_suit())
 
             newCardString = "%s of %s" % (numberString, suit.title())

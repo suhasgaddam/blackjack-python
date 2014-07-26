@@ -105,6 +105,15 @@ class Card(object):
         else:
             return [self._number]
 
+    def get_number(self):
+        """This function returns the raw number
+
+        :returns: :attr:`_number`
+        :rtype: int
+        """
+        return self._number
+
+
     def get_suit(self):
         """This function returns the suit
 
