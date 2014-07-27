@@ -55,7 +55,7 @@ class Card(object):
                              " %s." % (suit, POSSIBLE_SUIT))
 
     def _translate_number(self):
-        """This is a hidden function that changes the card number to a
+        """This is a hidden method that changes the card number to a
         human-readable string
 
         'Ace' for 1
@@ -69,7 +69,7 @@ class Card(object):
             return self._number
 
     def __repr__(self):
-        """This function returns a nice string representation of the card object
+        """This method returns a nice string representation of the card object
 
         useful in printing card object as "%s"
 
@@ -86,8 +86,8 @@ class Card(object):
         return self.__repr__()
 
     def get_value(self):
-        """ This function returns the blackjack value of card in an array
-            format
+        """ This method returns the blackjack value of card in an array
+        format
 
         if Ace, return [1, 11]
 
@@ -106,7 +106,7 @@ class Card(object):
             return [self._number]
 
     def get_number(self):
-        """This function returns the raw number
+        """This method returns the raw number
 
         :returns: :attr:`_number`
         :rtype: int
@@ -115,7 +115,7 @@ class Card(object):
 
 
     def get_suit(self):
-        """This function returns the suit
+        """This method returns the suit
 
         :returns: :attr:`_suit`
         :rtype: str
@@ -123,7 +123,7 @@ class Card(object):
         return self._suit
 
     def is_ace(self):
-        """This function checks if card is an Ace
+        """This method checks if card is an Ace
 
         :returns: True if card is an Ace
         :rtype: bool
