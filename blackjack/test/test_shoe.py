@@ -41,7 +41,7 @@ def is_deck_ordered(sss):
 
 def test_functionality():
     new_shoe = shoe.Shoe(4)
-    while new_shoe.is_valid_deck():
+    while new_shoe.is_valid_shoe():
         dealt_card = new_shoe.deal()
         assert local_check_shoe(new_shoe)
         assert new_shoe.check_shoe()
@@ -54,10 +54,10 @@ def test_bad_number_of_decks():
         with pytest.raises(ValueError):
             new_shoe = shoe.Shoe(numpy.random.randint(-50, 0))
 
-def test_shuffle_deck():
+def test_shuffle_shoe():
     new_shoe = shoe.Shoe(4)
     assert is_deck_ordered(new_shoe)
-    new_shoe.shuffle_deck()
+    new_shoe.shuffle_shoe()
     assert not is_deck_ordered(new_shoe) 
 
     new_shoe.deal()

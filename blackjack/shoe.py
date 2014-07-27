@@ -60,21 +60,19 @@ class Shoe(object):
                     deck.append(card.Card(number, suit))
             self._cards += deck
 
-    def shuffle_deck(self):
+    def shuffle_shoe(self):
         """Shuffle the unused set of cards :attr:`_cards`
 
-        .. todo::
-            Maybe use a different `random.shuffle`?
+        .. todo:: Maybe use a different `random.shuffle`?
         """
-        LOGGER.debug("Shuffling deck")
+        LOGGER.debug("Shuffling shoe")
         random.shuffle(self._cards)
 
-    def is_valid_deck(self):
+    def is_valid_shoe(self):
         """Checks if there are enough cards to play the next round
 
-        .. todo::
-            Why >= 30 cards? This should depend on the number of players at the
-            table
+        .. todo:: Why >= 30 cards? This should depend on the number of players
+            at the table
 
         :returns: True if there are enough cards to play the next round
         :rtype: bool
@@ -112,14 +110,11 @@ class Shoe(object):
 
     def check_shoe(self):
         """Check to make sure all the cards are accounted for
+
+        .. todo:: Maybe an exception should be raised if cards go missing
+        .. todo:: Should the missing cards be shown or listed?
+
         :returns: True if all cards are accounted for
-
-        .. todo::
-            Maybe an exception should be raised if cards go missing
-
-        .. todo::
-            Should the missing cards be shown or listed?
-
         """
 
         # start with a simple card count check
