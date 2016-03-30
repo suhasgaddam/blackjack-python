@@ -32,7 +32,7 @@ It is recommended you use `virtualenv` as it will help manage dependencies in su
     (blackjack-python)vagrant@vagrant-ubuntu-wily-64:~/blackjack-python$ deactivate
     vagrant@vagrant-ubuntu-wily-64:~/blackjack-python$
 
-To install the Python dependencies, run `pip install -r requirements.txt`. Please note the tests currently rely on `numpy` (though c.f. TODO below), which will only install properly via `virtualenv` if you have the python header files available (`apt-get install python-dev` on Debian/Ubuntu).
+To install the Python dependencies, run `pip install -r requirements.txt`. 
 
 ## Running tests
 
@@ -58,4 +58,4 @@ You can run tests via the `pytest` module:
 
 ## TODO
 
-   * Remove `numpy` as a dependency in the tests - we should be able to achieve the same thing with `random.randint`
+   * ~Remove `numpy` as a dependency in the tests - we should be able to achieve the same thing with `random.randint`~

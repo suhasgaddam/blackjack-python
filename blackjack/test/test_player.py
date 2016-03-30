@@ -9,7 +9,7 @@ import blackjack.player as player
 import blackjack.shoe as shoe
 import blackjack.card as card
 
-import numpy
+import random
 
 def test_functionality():
     suit = card.POSSIBLE_SUIT[0]
@@ -29,7 +29,7 @@ def test_functionality():
 def test_is_blackjack():
     def _check_is_blackjack(card_numbers, blackjack=True):
         new_player = player.Player('Tester')
-        suit = card.POSSIBLE_SUIT[numpy.random.randint(4)]
+        suit = card.POSSIBLE_SUIT[random.randint(0,3)]
         for number in card_numbers:
             new_player.add_card(card.Card(number, suit))
 
@@ -57,7 +57,7 @@ def test_is_blackjack():
 def test_is_winner():
     def _check_is_winner(card_numbers, winner=True):
         new_player = player.Player('Tester')
-        suit = card.POSSIBLE_SUIT[numpy.random.randint(4)]
+        suit = card.POSSIBLE_SUIT[random.randint(0,3)]
         for number in card_numbers:
             new_player.add_card(card.Card(number, suit))
 
@@ -84,7 +84,7 @@ def test_is_winner():
 def test_is_loser():
     def _check_is_loser(card_numbers, loser=True):
         new_player = player.Player('Tester')
-        suit = card.POSSIBLE_SUIT[numpy.random.randint(4)]
+        suit = card.POSSIBLE_SUIT[random.randint(0,3)]
         for number in card_numbers:
             new_player.add_card(card.Card(number, suit))
 
@@ -108,7 +108,7 @@ def test_is_loser():
 def test_silly_strategy():
     def _check_action(card_numbers, action=player.STAY):
         new_player = player.Player('Tester')
-        suit = card.POSSIBLE_SUIT[numpy.random.randint(4)]
+        suit = card.POSSIBLE_SUIT[random.randint(0,3)]
         for number in card_numbers:
             new_player.add_card(card.Card(number, suit))
 

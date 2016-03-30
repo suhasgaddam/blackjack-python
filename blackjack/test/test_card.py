@@ -7,7 +7,7 @@ sys.path.append(os.path.join(os.getcwd(), '../'))
 import pytest
 import blackjack.card as card
 
-import numpy
+import random
 import string
 
 def test_functional():
@@ -42,21 +42,21 @@ def test_functional():
 
 def test_disallowed():
     def __randomSuit(length=5):
-           return ''.join(numpy.random.choice(string.letters) for i in range(length))
+           return ''.join(random.choice(string.letters) for i in range(length))
 
     # disallowed number
-    for number in numpy.random.randint(-50, 50, numpy.random.randint(50)):
+    for number in (random.randint(-50, 49) for _ in xrange(random.randint(0,49))):
         if ((number >= 1) and (number <= 13)):
             continue
         with pytest.raises(ValueError):
             newCard = card.Card(number, 'hearts')
 
     # dissllowed suit
-    for i in xrange(numpy.random.randint(50)):
+    for i in xrange(random.randint(0,49)):
         with pytest.raises(ValueError):
-            newCard = card.Card(numpy.random.randint(14), __randomSuit())
+            newCard = card.Card(random.randint(0,13), __randomSuit())
 
     for suit in ('HEARTSS', 'DIAMOONNDSA', 'SSPADDES', 'CCLLUUBBSS'):
         with pytest.raises(ValueError):
-            newCard = card.Card(numpy.random.randint(14), suit)
+            newCard = card.Card(random.randint(0,13), suit)
 
