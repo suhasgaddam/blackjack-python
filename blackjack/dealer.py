@@ -14,9 +14,6 @@ class Dealer(p.Player):
 
     Orchestrates the entire blackjack game
     """
-    #: a reference to the :class:`blackjack.table.Table` that the dealer is
-    #: sitting
-    _table = None
 
     def __init__(self, name, table):
         """
@@ -24,6 +21,11 @@ class Dealer(p.Player):
         :param table: the table of the :class:`Dealer`
         :type table: :class:`blackjack.table.Table`
         """
+
+        #: a reference to the :class:`blackjack.table.Table` that the dealer is
+        #: sitting
+        self._table = None
+
         super(Dealer, self).__init__(name)
         self._table = table
 

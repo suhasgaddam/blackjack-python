@@ -23,18 +23,19 @@ class Card(object):
     """A Card object
     """
 
-    #: Holds an integer in the range [1, 13] which represents the card number
-    _number = None
-
-    #: Holds the suit as a lowercase string
-    _suit = None
-
     def __init__(self, number, suit):
         """
         :param int number: a number between 1 and 13, inclusive
         :param str suit: a case-independent string in :attr:`POSSIBLE_SUIT`
         :raises: ValueError
         """
+
+        #: Holds an integer in the range [1, 13] which represents the card number
+        self._number = None
+
+        #: Holds the suit as a lowercase string
+        self._suit = None
+
         # throw ValueError if input argument is bad
         base_error_str = 'A new Card cannot be created.'
 

@@ -16,26 +16,27 @@ class Shoe(object):
     objects
     """
 
-    #: an array of unused :class:`blackjack.card.Card` objects that are waiting
-    #: to be dealt
-    _cards = []
-
-    #: an array of played :class:`blackjack.card.Card` objects
-    _used_cards = []
-
-    #: an array of :class:`blackjack.card.Card` objects that are currently
-    #: being played on the :class:`blackjack.table.Table`
-    _in_play_cards = []
-
-    #: the number of sets of decks
-    _number_of_decks = None
-
     def __init__(self, number_of_decks):
         """
         :param int number_of_decks: a number greater than 0 that represents the
             sets of decks that will be created
         :raises: ValueError
         """
+
+        #: an array of unused :class:`blackjack.card.Card` objects that are waiting
+        #: to be dealt
+        self._cards = []
+
+        #: an array of played :class:`blackjack.card.Card` objects
+        self._used_cards = []
+
+        #: an array of :class:`blackjack.card.Card` objects that are currently
+        #: being played on the :class:`blackjack.table.Table`
+        self._in_play_cards = []
+
+        #: the number of sets of decks
+        self._number_of_decks = None
+
         # check to make sure that number_of_decks is greater than 0
         # throw ValueError if input argument is bad
         if number_of_decks > 0:

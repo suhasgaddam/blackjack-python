@@ -17,21 +17,6 @@ class Table(object):
     .. todo:: Handle player's bets and betting in general
     """
 
-    #: Holds the amount of money the bank has
-    _bank = None
-
-    #: Holds the :class:`blackjack.shoe.Shoe`
-    _shoe = None
-
-    #: Holds the :class:`blackjack.dealer.Dealer`
-    _dealer = None
-
-    #: Holds a list of all :class:`blackjack.player.Player` objects at the table
-    _players = None
-
-    #: Does nothing for now
-    _playerBets = None
-
     def __init__(self, number_of_decks=5, bank_seed_money=10000,
                  number_of_players=5, dealer_name='Bob'):
         """
@@ -43,6 +28,22 @@ class Table(object):
         :param int bank_seed_money: seed the table's bank
         :param int number_of_players: number of players at the table
         """
+
+        #: Holds the amount of money the bank has
+        self._bank = None
+
+        #: Holds the :class:`blackjack.shoe.Shoe`
+        self._shoe = None
+
+        #: Holds the :class:`blackjack.dealer.Dealer`
+        self._dealer = None
+
+        #: Holds a list of all :class:`blackjack.player.Player` objects at the table
+        self._players = None
+
+        #: Does nothing for now
+        self._playerBets = None
+
         self.reset()
         self._shoe = shoe.Shoe(number_of_decks)
         self._bank = bank_seed_money

@@ -21,21 +21,22 @@ class Player(object):
     """A Player object
     """
 
-    #: an array that contains all the :class:`blackjack.card.Card` in a
-    #: :class:`Player` hand
-    _cards = None
-
-    #: a string that contains the name of the :class:`Player`
-    _name = None
-
-    #: an array that holds all the possible blackjack counts for the
-    #: :class:`blackjack.card.Card` objects in :attr:`_cards`
-    _count = None
-
     def __init__(self, name):
         """
         :param str name: a player's name
         """
+
+        #: an array that contains all the :class:`blackjack.card.Card` in a
+        #: :class:`Player` hand
+        self._cards = None
+
+        #: a string that contains the name of the :class:`Player`
+        self._name = None
+
+        #: an array that holds all the possible blackjack counts for the
+        #: :class:`blackjack.card.Card` objects in :attr:`_cards`
+        self._count = None
+
         # reset all the internal variables
         self.reset()
         self._name = name
