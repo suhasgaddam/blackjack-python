@@ -1,0 +1,1 @@
+pytest>=1.4 # used for test fixtures

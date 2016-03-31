@@ -11,8 +11,8 @@ import blackjack.card as card
 import pprint
 import itertools
 
-import numpy
 import string
+import random
 
 def local_check_shoe(sss):
     card_dict = dict((suit, dict((number, 0) for number in card.POSSIBLE_NUMBER)) for suit in card.POSSIBLE_SUIT)
@@ -50,9 +50,9 @@ def test_functionality():
 def test_bad_number_of_decks():
     with pytest.raises(ValueError):
         new_shoe = shoe.Shoe(0)
-    for i in xrange(numpy.random.randint(50)):
+    for i in xrange(random.randint(0,49)):
         with pytest.raises(ValueError):
-            new_shoe = shoe.Shoe(numpy.random.randint(-50, 0))
+            new_shoe = shoe.Shoe(random.randint(-50, -1))
 
 def test_shuffle_shoe():
     new_shoe = shoe.Shoe(4)
@@ -82,7 +82,7 @@ def test_bad_deck_missing_cards():
 
 def test_bad_deck_repeated_cards():
     def _get_random_index(high):
-        return numpy.random.randint(high)
+        return random.randint(0,high-1)
 
     new_shoe = shoe.Shoe(4)
 
